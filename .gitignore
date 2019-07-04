@@ -1,0 +1,37 @@
+# Author: Diego Holguin
+# Link: 
+
+############################
+# Directories to ignore    #
+# specific to this project #
+############################
+output/
+docs/
+
+#############################
+# Ingore any of my personal #
+# text editor project files #
+#############################
+*.code-workspace
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
