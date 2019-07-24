@@ -11,8 +11,19 @@ docs/
 #############################
 # Ingore any of my personal #
 # text editor project files #
+# in addition to ignoring   #
+# any CMake misc files      #
 #############################
 *.code-workspace
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
 
 # Compiled source #
 ###################

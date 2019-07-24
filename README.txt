@@ -1,6 +1,7 @@
 Project Name: DMath-Engine
 ----------------------------
     Documentation Tool: Doxygen
-    Testing Tool: TBD
-    Build Tool: TBD
+    Testing Tool: Google Test
+    Build Tool: Makefiles
+    Logging Tool: TBD
     Language: C++

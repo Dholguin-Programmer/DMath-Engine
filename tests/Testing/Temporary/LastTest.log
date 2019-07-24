@@ -1,0 +1,68 @@
+Start testing: Jul 23 19:14 CDT
+----------------------------------------------------------
+1/2 Testing: Vector3f-Test
+1/2 Test: Vector3f-Test
+Command: "/home/diego/work/DMath-Engine/tests/vector3f-unit-test"
+Directory: /home/diego/work/DMath-Engine/tests
+"Vector3f-Test" start time: Jul 23 19:14 CDT
+Output:
+----------------------------------------------------------
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from Vector3f
+[ RUN      ] Vector3f.Comparison
+[       OK ] Vector3f.Comparison (0 ms)
+[ RUN      ] Vector3f.Addition
+[       OK ] Vector3f.Addition (0 ms)
+[ RUN      ] Vector3f.Subtraction
+[       OK ] Vector3f.Subtraction (0 ms)
+[ RUN      ] Vector3f.Scalar_Multiplcation
+[       OK ] Vector3f.Scalar_Multiplcation (0 ms)
+[ RUN      ] Vector3f.Scalar_Division
+[       OK ] Vector3f.Scalar_Division (0 ms)
+[ RUN      ] Vector3f.Dot_Product
+[       OK ] Vector3f.Dot_Product (0 ms)
+[ RUN      ] Vector3f.Cross_Product
+[       OK ] Vector3f.Cross_Product (0 ms)
+[----------] 7 tests from Vector3f (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test case ran. (0 ms total)
+[  PASSED  ] 7 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Vector3f-Test" end time: Jul 23 19:14 CDT
+"Vector3f-Test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: Matrix3f-Test
+2/2 Test: Matrix3f-Test
+Command: "/home/diego/work/DMath-Engine/tests/matrix-unit-test"
+Directory: /home/diego/work/DMath-Engine/tests
+"Matrix3f-Test" start time: Jul 23 19:14 CDT
+Output:
+----------------------------------------------------------
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from Matrix3f
+[ RUN      ] Matrix3f.Comparison
+[          ] [ INFO ][ 4 5 
+  1 2 
+  7 8  ]
+[       OK ] Matrix3f.Comparison (0 ms)
+[----------] 1 test from Matrix3f (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Matrix3f-Test" end time: Jul 23 19:14 CDT
+"Matrix3f-Test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 23 19:14 CDT
