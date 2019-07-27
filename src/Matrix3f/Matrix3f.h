@@ -29,9 +29,9 @@ namespace DME
             /*!
                 This constructor constructs a 3x3 matrix based upon the specified values.
             */ 
-            Matrix3f(float _m0, float _m1, float _m2,
-                     float _m3, float _m4, float _m5,
-                     float _m6, float _m7, float _m8);
+            Matrix3f(float _m0, float _m3, float _m6,
+                     float _m1, float _m4, float _m7,
+                     float _m2, float _m5, float _m8);
             
             //! Deconstructor for the Matrix3f class.
             /*!
@@ -133,6 +133,18 @@ namespace DME
                 to their matrix elements.
             */ 
             bool operator!=(const Matrix3f& _m) const;
+
+            //! The Identity static function returns the identiy matrix
+            /*!
+                Note that performing Matrix Multiplication between Matrix M and
+                Identify Matrix I results in Matrix M.For example, M x I = M
+             */
+            static Matrix3f Identity()
+            {
+                return Matrix3f(1,0,0,
+                                0,1,0,
+                                0,0,1);
+            }
     };
 }
 #endif
