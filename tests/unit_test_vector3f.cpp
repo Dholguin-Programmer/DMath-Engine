@@ -1,6 +1,6 @@
 #include "Vector3f.h"
 #include <gtest/gtest.h>
-// #define GTEST_COUT std::cerr << "[          ] [ INFO ]"
+#include "GTest_Helper.h"
 
 TEST(Vector3f, Comparison)
 {
@@ -8,11 +8,13 @@ TEST(Vector3f, Comparison)
     const DME::Vector3f testVectorTwo(6,5,4);
     const DME::Vector3f copyVectorOne(testVectorOne);
 
-    // Test Equals functionality of Vector3f class
+    // Test Vector3f Equality functionality of Vector3f class
     ASSERT_TRUE(testVectorOne == copyVectorOne);
+    GTEST_PASSED << "Equality" << std::endl;
 
-    // Test Not Equals functionality of Vector3f class
+    // Test Vector3f Inequality functionality of Vector3f class
     ASSERT_TRUE(testVectorOne != testVectorTwo);
+    GTEST_PASSED << "Inequality" << std::endl;
 }
 
 TEST(Vector3f, Addition)
@@ -35,13 +37,15 @@ TEST(Vector3f, Addition)
     const DME::Vector3f testVectorTwo(6,5,4);
     DME::Vector3f expectedVectorThusFar(10, 10, 10);
 
-    // Test Addition functionality of Vector3f class
+    // Test Vector3f Addition functionality of Vector3f class
     ASSERT_TRUE((testVectorOne + testVectorTwo) == expectedVectorThusFar);
+    GTEST_PASSED << "Addition" << std::endl;
 
-    // Now lets test that the Addition and Assigment functionality as well. 
+    // Test Vector3f Addition & Assignment functionality of Vector3f class
     const DME::Vector3f testVectorThree(1,3,5);
     expectedVectorThusFar += testVectorThree;
     ASSERT_TRUE((testVectorOne + testVectorTwo + testVectorThree) == expectedVectorThusFar);
+    GTEST_PASSED << "Addition & Assignment" << std::endl;
 }
 
 TEST(Vector3f, Subtraction)
@@ -64,13 +68,15 @@ TEST(Vector3f, Subtraction)
     const DME::Vector3f testVectorTwo(1,6,11);
     DME::Vector3f expectedVectorThusFar((testVectorOne - testVectorTwo));
 
-    // Now lets test that the Subtraction and Assigment functionality works as well. 
+    // Test Vector3f Subtraction functionality of Vector3f class
     ASSERT_TRUE((testVectorOne - testVectorTwo) == expectedVectorThusFar);
+    GTEST_PASSED << "Subtraction" << std::endl;
 
-    // Now lets test that the Subtraction and Assigment functionality works as well. 
+    // Test Vector3f Subtraction & Assignment functionality of Vector3f class
     DME::Vector3f testVectorThree(3,2,1);
     expectedVectorThusFar -= testVectorThree;
     ASSERT_TRUE((testVectorOne - testVectorTwo - testVectorThree) == expectedVectorThusFar);
+    GTEST_PASSED << "Subtraction & Assignment" << std::endl;
 }
 
 TEST(Vector3f, Scalar_Multiplcation)
@@ -93,12 +99,14 @@ TEST(Vector3f, Scalar_Multiplcation)
     const float scalar = 5;
     DME::Vector3f expectedVectorThusFar((testVectorOne * scalar));
 
-    // Now lets test that the Scalar Multiplication functionality works.
+    // Test Vector3f Scalar Multiplication functionality of Vector3f class
     ASSERT_TRUE((testVectorOne * scalar) == expectedVectorThusFar);
+    GTEST_PASSED << "Scalar Multiplication" << std::endl;
 
-    // Now lets test that the Scalar Multilication and Assigment functionality works as well. 
+    // Test Vector3f Scalar Multiplication & Assignment functionality of Vector3f class
     expectedVectorThusFar *= scalar;
     ASSERT_TRUE((testVectorOne * scalar * scalar) == expectedVectorThusFar);
+    GTEST_PASSED << "Scalar Multiplication & Assignment" << std::endl;
 }
 
 TEST(Vector3f, Scalar_Division)
@@ -119,14 +127,16 @@ TEST(Vector3f, Scalar_Division)
 
     const DME::Vector3f testVectorOne(125,250,500);
     const float divisor = 5;
-    DME::Vector3f expectedVectorThusFar(5, 50, 100);
+    DME::Vector3f expectedVectorThusFar(25, 50, 100);
 
-    // Now lets test that the Scalar Multiplication functionality works.
+    // Test Vector3f Scalar Division functionality of Vector3f class
     ASSERT_TRUE((testVectorOne / divisor) == expectedVectorThusFar);
+    GTEST_PASSED << "Scalar Division" << std::endl;
 
-    // Now lets test that the Scalar Multilication and Assigment functionality works as well. 
+    // Test Vector3f Scalar Division & Assignment functionality of Vector3f class
     expectedVectorThusFar /= divisor;
     ASSERT_TRUE((testVectorOne / (divisor * divisor)) == expectedVectorThusFar);
+    GTEST_PASSED << "Scalar Division & Assignment" << std::endl;
 }
 
 TEST(Vector3f, Dot_Product)
@@ -155,8 +165,9 @@ TEST(Vector3f, Dot_Product)
     const DME::Vector3f perpenicularVectorTwo(0,10,0);
     const float expectedDotProduct = 0; // Assume we both vectors are perpendicular
 
-    // Now lets test that the Scalar Multiplication functionality works.
+    // Test Vector3f static Dot function
     ASSERT_TRUE(DME::Vector3f::Dot(perpenicularVectorOne, perpenicularVectorTwo) == expectedDotProduct);
+    GTEST_PASSED << "Dot Product" << std::endl;
 }
 
 TEST(Vector3f, Cross_Product)
@@ -179,8 +190,9 @@ TEST(Vector3f, Cross_Product)
     const DME::Vector3f perpenicularVectorTwo(2,5,3);
     const DME::Vector3f expectedDotProduct(-5, 2, 0);
 
-    // Now lets test that the Scalar Multiplication functionality works.
+    // Test Vector3f static Cross function
     ASSERT_TRUE(DME::Vector3f::Cross(perpenicularVectorOne, perpenicularVectorTwo) == expectedDotProduct);
+    GTEST_PASSED << "Cross Product" << std::endl;
 }
 
 int main(int argc, char** argv) 

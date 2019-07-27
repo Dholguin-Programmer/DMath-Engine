@@ -14,11 +14,11 @@ TEST(Matrix3f, Comparison)
 
     // Test Matrix Equality functional of Matrix3f class
     ASSERT_FALSE(testVectorOne == testVectorTwo);
-    GTEST_PASSED << "Matrix Equality" << std::endl;
+    GTEST_PASSED << "Equality" << std::endl;
 
     // Test Matrix Inequality functional of Matrix3f class
     ASSERT_TRUE(testVectorOne != testVectorTwo);
-    GTEST_PASSED << "Matrix Inequality" << std::endl;
+    GTEST_PASSED << "Inequality" << std::endl;
 }
 
 TEST(Matrix3f, Addition)
@@ -50,7 +50,7 @@ TEST(Matrix3f, Addition)
 
     // Test Matrix Addition functionality of Matrix3f class
     ASSERT_TRUE((testMatrixOne + testMatrixTwo) == expectedMatrixThusFar);
-    GTEST_PASSED << "Matrix Addition" << std::endl;
+    GTEST_PASSED << "Addition" << std::endl;
 
     // Now lets test that Matrix Addition and Assigment functionality works as well. 
     const DME::Matrix3f testMatrixThree(1,1,1,
@@ -58,7 +58,7 @@ TEST(Matrix3f, Addition)
                                         1,1,1);
     expectedMatrixThusFar += testMatrixThree;
     ASSERT_TRUE((testMatrixOne + testMatrixTwo + testMatrixThree) == expectedMatrixThusFar);
-    GTEST_PASSED << "Matrix Addition & Assignment" << std::endl;                 
+    GTEST_PASSED << "Addition & Assignment" << std::endl;                 
 }
 
 TEST(Matrix3f, Subtraction)
@@ -90,7 +90,7 @@ TEST(Matrix3f, Subtraction)
 
     // Test Matrix Subtraction functionality of Matrix3f class
     ASSERT_TRUE((testMatrixOne - testMatrixTwo) == expectedMatrixThusFar);
-    GTEST_PASSED << "Matrix Subtraction" << std::endl;
+    GTEST_PASSED << "Subtraction" << std::endl;
 
 
     // Now lets test that the Subtraction and Assigment functionality as well. 
@@ -99,7 +99,7 @@ TEST(Matrix3f, Subtraction)
                                         1,1,1);
     expectedMatrixThusFar -= testMatrixThree;
     ASSERT_TRUE((testMatrixOne - testMatrixTwo - testMatrixThree) == expectedMatrixThusFar);
-    GTEST_PASSED << "Matrix Subtraction & Assignment" << std::endl;    
+    GTEST_PASSED << "Subtraction & Assignment" << std::endl;    
 }
 
 TEST(Matrix3f, Scalar_Multiplication)
@@ -128,12 +128,12 @@ TEST(Matrix3f, Scalar_Multiplication)
 
     // Test Scalar Multiplication functionality of Matrix3f class
     ASSERT_TRUE((testMatrixOne * scalar) == expectedMatrixThusFar);
-    GTEST_PASSED << "Scalar Multiplication" << std::endl;
+    GTEST_PASSED << "Multiplication" << std::endl;
 
     // Now lets test that the Scalar Multiplication and Assigment functionality as well. 
     expectedMatrixThusFar *= scalar;
     ASSERT_TRUE((testMatrixOne * (scalar * scalar)) == expectedMatrixThusFar);
-    GTEST_PASSED << "Scalar Multiplication & Assignment" << std::endl;
+    GTEST_PASSED << "Multiplication & Assignment" << std::endl;
 
 }
 
@@ -205,12 +205,12 @@ TEST(Matrix3f, Matrix_Multiplication)
     
     // Test Matrix Multiplication functionality of Matrix3f class
     ASSERT_TRUE((testMatrixOne * testMatrixTwo) == expectedMatrixThusFar);
-    GTEST_PASSED << "Matrix Multiplication" << std::endl;
+    GTEST_PASSED << "Multiplication" << std::endl;
 
     //Now lets test that the Matrix Multiplication and Assigment functionality as well. 
     expectedMatrixThusFar *= testMatrixOne;
     ASSERT_TRUE((testMatrixOne * testMatrixTwo) * testMatrixOne == expectedMatrixThusFar);
-    GTEST_PASSED << "Matrix Multiplication & Assignment" << std::endl;
+    GTEST_PASSED << "Multiplication & Assignment" << std::endl;
 }
 
 int main(int argc, char** argv) 
