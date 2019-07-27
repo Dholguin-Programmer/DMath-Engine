@@ -4,9 +4,9 @@
 
 TEST(Vector3f, Comparison)
 {
-    DME::Vector3f testVectorOne(4,5,6);
-    DME::Vector3f testVectorTwo(6,5,4);
-    DME::Vector3f copyVectorOne(testVectorOne);
+    const DME::Vector3f testVectorOne(4,5,6);
+    const DME::Vector3f testVectorTwo(6,5,4);
+    const DME::Vector3f copyVectorOne(testVectorOne);
 
     // Test Equals functionality of Vector3f class
     ASSERT_TRUE(testVectorOne == copyVectorOne);
@@ -31,17 +31,16 @@ TEST(Vector3f, Addition)
        We'll just be testing this functionality for a 3-D Vector only.
     */
 
-    DME::Vector3f testVectorOne(4,5,6);
-    DME::Vector3f testVectorTwo(6,5,4);
-    DME::Vector3f expectedVectorThusFar((testVectorOne + testVectorTwo));
+    const DME::Vector3f testVectorOne(4,5,6);
+    const DME::Vector3f testVectorTwo(6,5,4);
+    DME::Vector3f expectedVectorThusFar(10, 10, 10);
 
     // Test Addition functionality of Vector3f class
     ASSERT_TRUE((testVectorOne + testVectorTwo) == expectedVectorThusFar);
 
-    DME::Vector3f testVectorThree(1,3,5);
-    expectedVectorThusFar += testVectorThree;
-
     // Now lets test that the Addition and Assigment functionality as well. 
+    const DME::Vector3f testVectorThree(1,3,5);
+    expectedVectorThusFar += testVectorThree;
     ASSERT_TRUE((testVectorOne + testVectorTwo + testVectorThree) == expectedVectorThusFar);
 }
 
@@ -61,17 +60,16 @@ TEST(Vector3f, Subtraction)
        We'll just be testing this functionality for a 3-D Vector only.
     */
 
-    DME::Vector3f testVectorOne(5,10,15);
-    DME::Vector3f testVectorTwo(1,6,11);
+    const DME::Vector3f testVectorOne(5,10,15);
+    const DME::Vector3f testVectorTwo(1,6,11);
     DME::Vector3f expectedVectorThusFar((testVectorOne - testVectorTwo));
 
     // Now lets test that the Subtraction and Assigment functionality works as well. 
     ASSERT_TRUE((testVectorOne - testVectorTwo) == expectedVectorThusFar);
 
+    // Now lets test that the Subtraction and Assigment functionality works as well. 
     DME::Vector3f testVectorThree(3,2,1);
     expectedVectorThusFar -= testVectorThree;
-
-    // Now lets test that the Subtraction and Assigment functionality works as well. 
     ASSERT_TRUE((testVectorOne - testVectorTwo - testVectorThree) == expectedVectorThusFar);
 }
 
@@ -91,16 +89,15 @@ TEST(Vector3f, Scalar_Multiplcation)
        We'll just be testing this functionality for a 3-D Vector only.
     */
 
-    DME::Vector3f testVectorOne(5,10,20);
-    float scalar = 5;
+    const DME::Vector3f testVectorOne(5,10,20);
+    const float scalar = 5;
     DME::Vector3f expectedVectorThusFar((testVectorOne * scalar));
 
     // Now lets test that the Scalar Multiplication functionality works.
     ASSERT_TRUE((testVectorOne * scalar) == expectedVectorThusFar);
 
-    expectedVectorThusFar *= scalar;
-
     // Now lets test that the Scalar Multilication and Assigment functionality works as well. 
+    expectedVectorThusFar *= scalar;
     ASSERT_TRUE((testVectorOne * scalar * scalar) == expectedVectorThusFar);
 }
 
@@ -113,23 +110,22 @@ TEST(Vector3f, Scalar_Division)
         Vector A    Scalar X     Vector C (Vector A multiplied by Scalar X) 
        ---------    ---------    --------------
        |  A_X  |                 |   A_X / X  |
-       |  A_Y  | /      x        |   A_Y / X  |
+       |  A_Y  | /      X        |   A_Y / X  |
        |  A_Z  |                 |   A_Z / X  |
        ---------                 --------------
 
        We'll just be testing this functionality for a 3-D Vector only.
     */
 
-    DME::Vector3f testVectorOne(125,250,500);
-    float divisor = 5;
-    DME::Vector3f expectedVectorThusFar((testVectorOne / divisor));
+    const DME::Vector3f testVectorOne(125,250,500);
+    const float divisor = 5;
+    DME::Vector3f expectedVectorThusFar(5, 50, 100);
 
     // Now lets test that the Scalar Multiplication functionality works.
     ASSERT_TRUE((testVectorOne / divisor) == expectedVectorThusFar);
 
-    expectedVectorThusFar /= divisor;
-
     // Now lets test that the Scalar Multilication and Assigment functionality works as well. 
+    expectedVectorThusFar /= divisor;
     ASSERT_TRUE((testVectorOne / (divisor * divisor)) == expectedVectorThusFar);
 }
 
@@ -142,12 +138,12 @@ TEST(Vector3f, Dot_Product)
         Vector A       Scalar B     Value X (Vector A dot producted with Vector B) 
        ---------       ---------    ----------------------------------------------
        |  A_X  |       |  B_X  |                      
-       |  A_Y  |       |  B_Y  |  =    (A_X + B_X) + (A_Y + B_Y) + (A_Z + B_Z)                      
+       |  A_Y  |  dot  |  B_Y  |  =    (A_X + B_X) + (A_Y + B_Y) + (A_Z + B_Z)                      
        |  A_Z  |       |  B_Z  |                                         
        ---------       ---------
 
        We'll just be testing this functionality for a 3-D Vector only.
-       Note that a dot product any of these values defined below, tells us 
+       Note that a dot product that returns any of these values defined below, tells us 
        meainingful information with respect to the direction of both vectors 
        (Vector A and Vector B) :
             value = -1 --> Vector A and Vector B are heading in opposite directions.
@@ -155,9 +151,9 @@ TEST(Vector3f, Dot_Product)
             value =  1 --> Both Vector A and Vector B are heading in the same direction.
     */
 
-    DME::Vector3f perpenicularVectorOne(5,0,15);
-    DME::Vector3f perpenicularVectorTwo(0,10,0);
-    float expectedDotProduct = 0; // Assume we both vectors are perpendicular
+    const DME::Vector3f perpenicularVectorOne(5,0,15);
+    const DME::Vector3f perpenicularVectorTwo(0,10,0);
+    const float expectedDotProduct = 0; // Assume we both vectors are perpendicular
 
     // Now lets test that the Scalar Multiplication functionality works.
     ASSERT_TRUE(DME::Vector3f::Dot(perpenicularVectorOne, perpenicularVectorTwo) == expectedDotProduct);
@@ -172,16 +168,16 @@ TEST(Vector3f, Cross_Product)
         Vector A          Scalar B     Value X (Vector A dot producted with Vector B) 
        ---------         ---------     -----------------------------
        |  A_X  |         |  B_X  |     | (A_Y * B_Z) - (A_Z * B_Y) |               
-       |  A_Y  |         |  B_Y  |  =  | (A_Z * B_X) - (A_X * B_Z) |               
+       |  A_Y  |  cross  |  B_Y  |  =  | (A_Z * B_X) - (A_X * B_Z) |               
        |  A_Z  |         |  B_Z  |     | (A_X * B_Y) - (A_Y * B_X) |                
        ---------         ---------     -----------------------------                  
 
        We'll just be testing this functionality for a 3-D Vector only.
     */
 
-    DME::Vector3f perpenicularVectorOne(2,5,4);
-    DME::Vector3f perpenicularVectorTwo(2,5,3);
-    DME::Vector3f expectedDotProduct(-5, 2, 0);
+    const DME::Vector3f perpenicularVectorOne(2,5,4);
+    const DME::Vector3f perpenicularVectorTwo(2,5,3);
+    const DME::Vector3f expectedDotProduct(-5, 2, 0);
 
     // Now lets test that the Scalar Multiplication functionality works.
     ASSERT_TRUE(DME::Vector3f::Cross(perpenicularVectorOne, perpenicularVectorTwo) == expectedDotProduct);

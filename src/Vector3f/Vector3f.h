@@ -41,7 +41,7 @@ namespace DME
             /*!
                 This copy constructor is called when we're initializing
                 a Vector3f (object A) from another Vector3f (object B)
-                via a constructor 
+                via the constructor 
             */ 
             Vector3f(const Vector3f& _v);
 
@@ -49,7 +49,7 @@ namespace DME
             /*!
                 This copy constructor is called when we're initializing
                 a Vector3f (object A) from another Vector3f (object B)
-                via the = operation. 
+                via the '=' operation. 
             */ 
             Vector3f& operator=(const Vector3f& _v);
 
@@ -111,21 +111,21 @@ namespace DME
              */
             void operator*=(const float _scalar);
 
-            //! '*' operator used for multiplying the vector by a scalar value.
+            //! '*' operator used for multiplying a vector by a scalar value.
             /*!
                 The '*' operator defines the implementation details for
                 scalar multiplication for a specified scalar value.
              */
             Vector3f operator*(const float _scalar) const;
 
-            //! '/=' operator used for multiplying the vector by a.
+            //! '/=' operator used for dividing a vector by a scalar value.
             /*!
                 The '/=' operator defines the implementation details for
                 scalar division and assignment for a specified scalar value.
              */
             void operator/=(const float _scalar);
 
-            //! '/' operator used for multiplying the vector by a.
+            //! '/' operator used for dividing a vector by a scalar value.
             /*!
                 The '/' operator defines the implementation details for
                 scalar multiplication for a specified scalar value.

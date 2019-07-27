@@ -13,6 +13,7 @@ find_package(GTest REQUIRED)
 ]]#
 include_directories("${SRC_DIRECTORY}/Vector3f/")
 include_directories("${SRC_DIRECTORY}/Matrix3f/")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
 
 #[[
     Create executables that bind each respective unit test
@@ -20,10 +21,12 @@ include_directories("${SRC_DIRECTORY}/Matrix3f/")
 ]]#
 add_executable(vector3f-unit-test
     "${CMAKE_CURRENT_SOURCE_DIR}/unit_test_vector3f.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR/GTest_Helper.h}"
     "${SRC_DIRECTORY}/Vector3f/Vector3f.cpp"
     "${SRC_DIRECTORY}/Vector3f/Vector3f.h")
 add_executable(matrix-unit-test
     "${CMAKE_CURRENT_SOURCE_DIR}/unit_test_matrix3f.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR/GTest_Helper.h}"
     "${SRC_DIRECTORY}/Matrix3f/Matrix3f.cpp"
     "${SRC_DIRECTORY}/Matrix3f/Matrix3f.h")
 
