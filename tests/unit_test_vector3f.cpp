@@ -196,6 +196,15 @@ TEST(Vector3f, Cross_Product)
     GTEST_PASSED << "Cross Product" << std::endl;
 }
 
+TEST(Vector3f, Transform_Rotation)
+{   
+    DME::Vector3f testVectorOne (0,1,0);
+    DME::Vector3f expectedVectorOne (0,0,1); // X-axis rotated 90 degrees
+    DME::Vector3f_Statics::RotateX(testVectorOne, 90);
+    std::cout << testVectorOne << std::endl;
+
+}
+
 int main(int argc, char** argv) 
 {
     testing::InitGoogleTest(&argc, argv);

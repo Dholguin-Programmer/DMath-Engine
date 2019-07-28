@@ -13,7 +13,10 @@ find_package(GTest REQUIRED)
 set(SRC_DIRECTORY "../src")
 set(GMOCK_LIB "${CMAKE_CURRENT_SOURCE_DIR/GTest_Helper.h}")
 set(VECTOR3F_HEADERS 
-    "${SRC_DIRECTORY}/Vector3f/Vector3f.h" 
+    "${SRC_DIRECTORY}/Vector3f/Vector3f.h"
+    "${SRC_DIRECTORY}/Matrix3f/Matrix3f.h"
+    "${SRC_DIRECTORY}/Matrix3f/Matrix3f.cpp" 
+    "${SRC_DIRECTORY}/Math_Helper.h"
     "${SRC_DIRECTORY}/Vector3f/Vector3f_Statics.h"
    )
 set(MATRIX3F_HEADERS 
@@ -27,6 +30,7 @@ set(MATRIX3F_HEADERS
 ]]#
 include_directories("${SRC_DIRECTORY}/Vector3f/")
 include_directories("${SRC_DIRECTORY}/Matrix3f/")
+include_directories("${SRC_DIRECTORY}/")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
 
 #[[

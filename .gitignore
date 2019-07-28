@@ -15,6 +15,7 @@ docs/
 # any CMake misc files      #
 #############################
 *.code-workspace
+.vscode
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles

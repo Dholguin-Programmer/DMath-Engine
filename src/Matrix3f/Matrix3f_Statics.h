@@ -18,6 +18,7 @@ namespace DME
                                      0,0,1);
             }
 
+            //! The Transpose static function takes each row and converts it to a corressponding column
             static void Transpose(DME::Matrix3f& _m)
             {
                 // TRCSCROPE HERE
@@ -38,7 +39,7 @@ namespace DME
                     ------------
                 */
 
-                std::array<float, 9> cache = _m.m_matrixData;
+                const std::array<float, 9> cache = _m.m_matrixData;
 
                 // Leave 0th index alone as it's position does not change
                 _m.m_matrixData[3] = cache[1];
