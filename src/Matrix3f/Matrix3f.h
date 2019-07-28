@@ -133,18 +133,6 @@ namespace DME
                 to their matrix elements.
             */ 
             bool operator!=(const Matrix3f& _m) const;
-
-            //! The Identity static function returns the identiy matrix
-            /*!
-                Note that performing Matrix Multiplication between Matrix M and
-                Identify Matrix I results in Matrix M.For example, M x I = M
-             */
-            static Matrix3f Identity()
-            {
-                return Matrix3f(1,0,0,
-                                0,1,0,
-                                0,0,1);
-            }
     };
 }
 #endif

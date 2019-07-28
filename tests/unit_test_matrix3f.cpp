@@ -1,23 +1,25 @@
 #include "Matrix3f.h"
+#include "Matrix3f_Statics.h"
+#include "Vector3f.h"
 #include <gtest/gtest.h>
 #include "GTest_Helper.h"
 
 TEST(Matrix3f, Comparison)
 {
-    const DME::Matrix3f testVectorOne(4,5,6,
-                                1,2,3,
-                                7,8,9);
+    const DME::Matrix3f testMatrixOne(4,5,6,
+                                      1,2,3,
+                                      7,8,9);
 
-    const DME::Matrix3f testVectorTwo(1,2,3,
-                                4,5,6,
-                                7,8,9);
+    const DME::Matrix3f testMatrixTwo(1,2,3,
+                                      4,5,6,
+                                      7,8,9);
 
     // Test Matrix Equality functional of Matrix3f class
-    ASSERT_FALSE(testVectorOne == testVectorTwo);
+    ASSERT_FALSE(testMatrixOne == testMatrixTwo);
     GTEST_PASSED << "Equality" << std::endl;
 
     // Test Matrix Inequality functional of Matrix3f class
-    ASSERT_TRUE(testVectorOne != testVectorTwo);
+    ASSERT_TRUE(testMatrixOne != testMatrixTwo);
     GTEST_PASSED << "Inequality" << std::endl;
 }
 
@@ -212,6 +214,36 @@ TEST(Matrix3f, Matrix_Multiplication)
     ASSERT_TRUE((testMatrixOne * testMatrixTwo) * testMatrixOne == expectedMatrixThusFar);
     GTEST_PASSED << "Multiplication & Assignment" << std::endl;
 }
+
+TEST(Matrix3f, Tranpose)
+{
+    /*
+        The Transpose operation simply states for a given Matrix M, that the Tranpose
+        of Matrix M (let's call this M'), that the operation should follow the logic
+        defined below: 
+
+          Matrix M           M' (Tranpose of Matrix M)
+        ------------         ------------
+        | 0, 3, 6, |         | 0, 1, 2, |
+        | 1, 4, 7, |   ----> | 3, 4, 5, |
+        | 2, 5, 8  |         | 6, 7, 8  |
+        ------------         ------------
+
+        we'll just be testing this functionality for the 3x3 Matrix only.
+    */
+
+    const DME::Matrix3f testMatrixOne  (0, 3, 6, 
+                                        1, 4, 7,
+                                        2, 5, 8);
+    const DME::Matrix3f expectedMatrix (0, 1, 2,
+                                        3, 4, 5,
+                                        6, 7, 8);
+
+    // Test Matrix Transpose functionality
+    ASSERT_TRUE(DME::Matrix3f_Statics::GetTranspose(testMatrixOne) == expectedMatrix);
+    GTEST_PASSED << "Transpose" << std::endl;
+}
+
 
 int main(int argc, char** argv) 
 {

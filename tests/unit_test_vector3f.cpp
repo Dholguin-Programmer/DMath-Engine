@@ -1,4 +1,5 @@
 #include "Vector3f.h"
+#include "Vector3f_Statics.h"
 #include <gtest/gtest.h>
 #include "GTest_Helper.h"
 
@@ -166,7 +167,7 @@ TEST(Vector3f, Dot_Product)
     const float expectedDotProduct = 0; // Assume we both vectors are perpendicular
 
     // Test Vector3f static Dot function
-    ASSERT_TRUE(DME::Vector3f::Dot(perpenicularVectorOne, perpenicularVectorTwo) == expectedDotProduct);
+    ASSERT_TRUE(DME::Vector3f_Statics::Dot(perpenicularVectorOne, perpenicularVectorTwo) == expectedDotProduct);
     GTEST_PASSED << "Dot Product" << std::endl;
 }
 
@@ -191,7 +192,7 @@ TEST(Vector3f, Cross_Product)
     const DME::Vector3f expectedDotProduct(-5, 2, 0);
 
     // Test Vector3f static Cross function
-    ASSERT_TRUE(DME::Vector3f::Cross(perpenicularVectorOne, perpenicularVectorTwo) == expectedDotProduct);
+    ASSERT_TRUE(DME::Vector3f_Statics::Cross(perpenicularVectorOne, perpenicularVectorTwo) == expectedDotProduct);
     GTEST_PASSED << "Cross Product" << std::endl;
 }
 
