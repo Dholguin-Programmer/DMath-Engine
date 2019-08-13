@@ -58,7 +58,7 @@ namespace DME
                 This operator defines how the Quaternion class is outputed to the
                 C++ standard library's output stream.
             */ 
-            friend std::ostream& operator<<(std::ostream& os, const Vector3f& _q);
+            friend std::ostream& operator<<(std::ostream& os, const Quaternion& _q);
 
             //! '==' operator for the Quaternion class. 
             /*!
@@ -70,11 +70,39 @@ namespace DME
 
             //! '!=' operator for the Quaternion class. 
             /*!
-                The '==' operator defines the implementation details for
+                The '!=' operator defines the implementation details for
                 determinging whether two quaternions are not the same with respect to
                 their scalar and 3-D vector values.
             */ 
             bool operator!=(const Quaternion& _q) const;
+
+            //! '+=' operator for the Quaternion class. 
+            /*!
+                The '+=' operator defines the implementation details for
+                quaternion addition and assignment between two Quaternion's.
+            */ 
+            void operator+=(const Quaternion& _q);
+
+            //! '+' operator for the Quaternion class.
+            /*!
+                The '+' operator defines the implementation details for
+                quaternion addition between two Quaternion's.
+            */ 
+            Quaternion operator+(const Quaternion& _q) const;
+
+            //! '-=' operator for the Quaternion class. 
+            /*!
+                The '-=' operator defines the implementation details for
+                quaternion subtraction and assignment between two Quaternion's.
+            */ 
+            void operator-=(const Quaternion& _q);
+
+            //! '-' operator for the Quaternion class.
+            /*!
+                The '+' operator defines the implementation details for
+                quaternion subtraction between two Quaternion's.
+            */ 
+            Quaternion operator-(const Quaternion& _q) const;              
     };
 }
 

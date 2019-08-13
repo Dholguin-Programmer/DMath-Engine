@@ -1,4 +1,6 @@
 #include "Quaternion.h"
+#include "Vector3f.h"
+
 namespace DME
 {
     Quaternion::Quaternion(const float _s, Vector3f& _v)
@@ -65,4 +67,39 @@ namespace DME
         return !comparison_result;
     }
 
+    void Quaternion::operator+=(const Quaternion& _q)
+    {
+        // TRCSCROPE HERE
+
+        qScalar += _q.qScalar;
+        qVector += _q.qVector;
+    }
+
+    Quaternion Quaternion::operator+(const Quaternion& _q) const
+    {
+        // TRCSCROPE HERE
+
+        float newScalar = qScalar + _q.qScalar;
+        Vector3f newVector = qVector + _q.qVector;
+
+        return Quaternion(newScalar, newVector);
+    }         
+
+    void Quaternion::operator-=(const Quaternion& _q)
+    {
+        // TRCSCROPE HERE
+
+        qScalar -= _q.qScalar;
+        qVector -= _q.qVector;
+    }
+
+    Quaternion Quaternion::operator-(const Quaternion& _q) const
+    {
+        // TRCSCROPE HERE
+
+        float newScalar = qScalar - _q.qScalar;
+        Vector3f newVector = qVector - _q.qVector;
+
+        return Quaternion(qScalar, newVector);
+    } 
 }

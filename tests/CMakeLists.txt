@@ -48,7 +48,8 @@ set(GMOCK_LIB "${CMAKE_CURRENT_SOURCE_DIR/GTest_Helper.h}")
         )
     set(QUATERNION_SOURCES
         "${SRC_DIRECTORY}/Quaternion/Quaternion.h"
-        "${SRC_DIRECTORY}/Quaternion/Quaternion.cpp" 
+        "${SRC_DIRECTORY}/Quaternion/Quaternion.cpp"
+        ${VECTOR3F_SOURCES} 
         )
 
 #[[
