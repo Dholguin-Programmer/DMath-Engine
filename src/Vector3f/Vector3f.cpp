@@ -3,8 +3,8 @@
 namespace DME
 {
     Vector3f::Vector3f(float _x, 
-                                     float _y,
-                                     float _z)
+                       float _y,
+                       float _z)
     : 
       x(_x),
       y(_y),
