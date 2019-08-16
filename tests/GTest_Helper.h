@@ -1,0 +1,1 @@
+#define GTEST_PASSED std::cerr << "\e[32m[  PASSED  ] \e[39m"

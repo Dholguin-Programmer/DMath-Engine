@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+# This xdev file sets up the compilation variables needed to compile 
+# the Math-Engine. This file needs to be source upon execution of the top level
+# MakeFile like the following: 
+#
+#   source ./dmath-overrides.xdev; make 
+#
+#
+# Note that this currently assumes we have the g++ compiler installed on this machine,
+# and that the 
+
+# Compiler we wish to use for compilation/linking
+COMPILER=g++
+
+# Compiler Flags 
+CFLAGS=
+
+    # Language specification
+    CFLAGS+=" -std=c++11"
+
+    # Build with debug symbols for use of GDB
+    CFLAGS+=" -ggdb"
+
+    # Enable some deep warnings
+    CFLAGS+=" -Wextra"
+
+# Append CFLAGS onto COMPILER
+COMPILER=$COMPILER$CFLAGS
+
+# Libraries to include
+LIBS=
+        # Include standard C++ library
+        LIBS+=" -lstdc++"
+
+        # Include Google Test Framework
+        LIBS+=" -lgtest"
