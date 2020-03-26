@@ -8,13 +8,13 @@ import sys
 REPO_NAME = "DMath-Engine"
 
 # Extract Environment Variables 
-INSTALL_PREFIX = str(os.getenv('OE_INSTALL_PREFIX'))
+BUILDS_DIR = str(os.getenv('OE_BUILD_PREFIX'))
 OE_ENVIRONMENT_SETUP = bool(os.getenv('OE_ENVIRONMENT_SETUP'))
 TARGET_OS = str(os.getenv('TARGET_OS'))
 
 # Directory Relavent Variables
 DMATH_ENGINE_SOURCE_DIR = os.path.dirname(os.path.realpath(__file__))
-DMATH_ENGINE_BUILD_DIR = INSTALL_PREFIX + "/" + str(REPO_NAME)
+DMATH_ENGINE_BUILD_DIR = BUILDS_DIR + "/" + str(REPO_NAME)
 
 # TODO: Add windows support
 
