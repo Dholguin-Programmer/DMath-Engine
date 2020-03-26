@@ -1,4 +1,5 @@
 #include "Matrix3f.h"
+#include <iostream>
 #include <iterator>
 
 namespace DME

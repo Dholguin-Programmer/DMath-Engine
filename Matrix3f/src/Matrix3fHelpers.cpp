@@ -1,8 +1,8 @@
-#include "Matrix3f.h"
+#include "Matrix3fHelpers.h"
 
 namespace DME
 {
-    namespace Matrix3f_Statics
+    namespace Matrix3fHelpers
     {
             //! The Identity static function returns the identiy matrix
             /*!

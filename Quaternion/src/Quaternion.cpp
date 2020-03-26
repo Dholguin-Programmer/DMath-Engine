@@ -1,5 +1,4 @@
 #include "Quaternion.h"
-#include "Vector3f.h"
 
 namespace DME
 {

@@ -1,13 +1,9 @@
 // Author: Diego Holguin
 // <copyright>
 // Purpose:
+#pragma once
 
-#ifndef MATRIX3F
-#define MATRIX3F
-
-#include <iostream>
 #include <array>
-#include <math.h>
 
 /*! \namespace DME (DMath_Engine) namespace encapsulates all math related functionality. */
 namespace DME
@@ -135,4 +131,3 @@ namespace DME
             bool operator!=(const Matrix3f& _m) const;
     };
 }
-#endif

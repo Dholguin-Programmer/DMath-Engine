@@ -1,10 +1,8 @@
-#include "Vector3f.h"
-#include "Matrix3f.h"
-#include "Math_Helper.h"
+#include "Vector3fHelpers.h"
 
 namespace DME
 {
-    namespace Vector3f_Statics
+    namespace Vector3fHelpers
     {
         //! The Dot static function perfoms the dot product between two vectors
         /*!
@@ -75,37 +73,6 @@ namespace DME
             {
                 // PRINT ERROR
             }
-        }
-
-        static void RotateX(DME::Vector3f& _v, const float _d, bool roundValues=true)
-        {
-            // TRCSCROPE HERE
-            float cos = std::cos(DME::Math_Helper::ToRadians(_d));
-            float sin = std::sin(DME::Math_Helper::ToRadians(_d));
-
-            // TODO: Find a more concise answer rather than blindingly rounding all of the time.... 
-            if (roundValues)
-            {
-                cos = std::round(cos);
-                sin = std::round(sin);
-            }
-
-            DME::Matrix3f rotationMatrix(1,   0,        0,
-                                         0, cos, -1 * sin,
-                                         0, sin,      cos);
-
-            // Calculate new X, Y, and Z values for the passed in vector (i.e Transform-Rotation)
-            const float newX = (rotationMatrix.m_matrixData[0] * _v.x) + 
-                               (rotationMatrix.m_matrixData[3] * _v.y) +
-                               (rotationMatrix.m_matrixData[6] * _v.z);
-            const float newY = (rotationMatrix.m_matrixData[1] * _v.x) + 
-                               (rotationMatrix.m_matrixData[4] * _v.y) +
-                               (rotationMatrix.m_matrixData[7] * _v.z);
-            const float newZ = (rotationMatrix.m_matrixData[2] * _v.x) + 
-                               (rotationMatrix.m_matrixData[5] * _v.y) +
-                               (rotationMatrix.m_matrixData[8] * _v.z);
-
-            _v = DME::Vector3f(newX, newY, newZ);
         }
     }
 }
